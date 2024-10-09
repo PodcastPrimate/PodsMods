@@ -20,6 +20,19 @@
             margin: auto;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .slideshow {
+            text-align: center;
+            margin: 20px auto;
+        }
+        #slide-img {
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+        }
         a {
             color: #1a7f7f;
             text-decoration: none;
@@ -31,8 +44,16 @@
 </head>
 <body>
     <div class="container">
-        <h1>PodMods - Grassroots Drift Car Packs</h1>
-        <p>Welcome to the official PodMods GitHub page! Here you'll find links to my latest car packs and tracks for drifting enthusiasts.</p>
+        <header>
+            <img src="https://imgur.com/WpqlEZO.png" alt="PodMods Header" style="width: 100%; max-width: 800px; border-radius: 10px;">
+            <h1>PodMods - Grassroots Drift Car Packs</h1>
+            <p>Welcome to the Official Pod's Mods Assetto Mods page! Here you'll find links to my latest Car packs, Physics and Tracks for drifting enthusiasts.</p>
+        </header>
+
+        <div id="slideshow" class="slideshow">
+            <img id="slide-img" src="https://imgur.com/a/89Yor8k" alt="Slideshow Image" style="width: 100%; max-width: 800px; border-radius: 10px;">
+        </div>
+
         <h2>Car Packs</h2>
         <ul>
             <li><a href="https://drive.google.com/file/d/1y9svUOW7isJMFDWXTNcMqUhHprxzDNtt/view?usp=drive_link" target="_blank">Grassroots Car Pack</a></li>
@@ -41,8 +62,42 @@
             <li><a href="https://drive.google.com/your-link-here" target="_blank">ProSpec Pack TBD</a></li>
             <li><a href="https://drive.google.com/your-link-here" target="_blank">FD Spec Pack TBD</a></li>
         </ul>
+
         <h2>Tracks</h2>
-        <p>For more details and updates, join the <a href="https://discord.gg/MeB6PdsRNT" target="_blank">X10DD Force Feedback Setup</a>.</p>
+        <ul>
+            <li><a href="https://drive.google.com/your-track-link-here" target="_blank">Pod's Touge Paradise</a></li>
+        </ul>
+        <p>For more details and updates, join the <a href="https://discord.gg/your-discord-link" target="_blank">Discord community</a>.</p>
     </div>
+
+    <script>
+        const images = [
+            "https://imgur.com/z1ogDMK.png",
+            "https://i.imgur.com/3vzMSxq.jpg",
+            "https://i.imgur.com/cK9OtdV.png",
+            "https://i.imgur.com/8C5eGJQ.png",
+            "https://i.imgur.com/wgrjyC8.png",
+            "https://i.imgur.com/o1xut4V.png",
+            "https://i.imgur.com/F9Q5GMw.jpg",
+            "https://i.imgur.com/DGRtY3F.jpg",
+            "https://i.imgur.com/sXkbel3.jpg",
+            "https://i.imgur.com/oW72Jgz.jpg",
+            "https://i.imgur.com/FABcIlj.jpg",
+            "https://i.imgur.com/2tJ7rCn.png",
+            "https://i.imgur.com/74lbYTI.png",
+            "https://i.imgur.com/3zRP4rq.png",
+            "https://i.imgur.com/Fjz3N4c.png",
+        ];
+
+        let currentIndex = 0;
+        const slideImg = document.getElementById("slide-img");
+
+        function changeImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            slideImg.src = images[currentIndex];
+        }
+
+        setInterval(changeImage, 2000); // Change image every 3 seconds
+    </script>
 </body>
 </html>
